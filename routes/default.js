@@ -17,10 +17,11 @@ router.post('/', handlereq);
 
 router.get('/', function(req, res, next) {
   res.writeHead(200, {'content-type': 'application/json'});
+  let path    =  JSON.stringify(req.path, null, 2);
   let headers =  JSON.stringify(req.headers, null, 2);
   let params =   JSON.stringify(req.query, null, 2);
 
-  res.write('headers:');
+  res.write(path);
   res.write(headers);
   res.write(' params:');
   res.write(params);
