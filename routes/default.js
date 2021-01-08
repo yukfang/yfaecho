@@ -4,18 +4,19 @@ var router = express.Router();
 
 function handlereq(req, res, next) {
   res.writeHead(200, {'content-type': 'application/json'});
-  let path    =  req.path;
+  let path    =  req.baseUrl;
   let headers =  req.headers;
-  let params =   req.query;
-  let body =     req.body;
+  let params  =  req.query;
+  let body    =  JSON.parse(req.body);
 
 
   let resp = {
-    'path' : path,
-    'msg' : 'okie dokie',
+    'body'    : body,
+    path      : path,
+    'msg'     : 'okie dokie',
     'headers' : headers,
-    'params' : params,
-    'body' : body
+    'params'  : params,
+
   };
 
   res.write(JSON.stringify(resp, null, 2));
