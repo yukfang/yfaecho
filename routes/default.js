@@ -1,4 +1,5 @@
 var express = require('express');
+const { head } = require('../app');
 var router = express.Router();
 
 function handlereq(req, res, next) {
@@ -8,14 +9,14 @@ function handlereq(req, res, next) {
   let params =   JSON.stringify(req.query, null, 2);
   let body =   JSON.stringify(req.body, null, 2);
 
-  res.write(' path:');
-  res.write(path);
-  res.write(' headers:');
-  res.write(headers);
-  res.write(' params:');
-  res.write(params);
-  res.write(' body:');
-  res.write(body);
+  let resp = {
+    path : path,
+    headers : headers,
+    params : params,
+    body : body
+  };
+
+  res.write(resp);
   res.end();
 }
 
