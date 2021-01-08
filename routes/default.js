@@ -10,10 +10,10 @@ function handlereq(req, res, next) {
   let body =   JSON.stringify(req.body, null, 2);
 
   let resp = {
-    path : path,
-    headers : headers,
-    params : params,
-    body : body
+    'path' : path,
+    'headers' : headers,
+    'params' : params,
+    'body' : body
   };
 
   res.write(resp);
