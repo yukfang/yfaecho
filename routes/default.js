@@ -16,7 +16,7 @@ function handlereq(req, res, next) {
     'body' : body
   };
 
-  res.write(resp);
+  res.write(JSON.stringify(resp));
   res.end();
 }
 
