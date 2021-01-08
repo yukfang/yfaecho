@@ -6,10 +6,15 @@ function handlereq(req, res, next) {
   let headers =  JSON.stringify(req.headers, null, 2);
   let params =   JSON.stringify(req.query, null, 2);
 
-  res.write('headers:');
+
+  res.write(' path:');
+  res.write(path);
+  res.write(' headers:');
   res.write(headers);
   res.write(' params:');
   res.write(params);
+  res.write(' body:');
+  res.write(body);
   res.end();
 }
 
