@@ -7,7 +7,7 @@ function handlereq(req, res, next) {
   let path    =  req.baseUrl;
   let headers =  req.headers;
   let params  =  req.query;
-  let body    =  JSON.parse(req.body);
+  let body    =  req.body;
 
 
   let resp = {
