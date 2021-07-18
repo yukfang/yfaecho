@@ -5,10 +5,11 @@ var cookieParser  = require('cookie-parser');
 var bodyParser    = require('body-parser');
 var logger        = require('morgan');
 
-var homeRouter    = require('./routes/home');
-var usersRouter   = require('./routes/users');
-var delayRouter   = require('./routes/delay');
-var defaultRouter = require('./routes/default');
+var homeRouter      = require('./routes/home');
+var usersRouter     = require('./routes/users');
+var delayRouter     = require('./routes/delay');
+var defaultRouter   = require('./routes/default');
+let test307Router01 = require('./routes/test307step01');
 
 var app = express();
 
@@ -29,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homeRouter);
 app.use('/307step1', test307Router01);
-app.use('/307step2', test307Router02);
+// app.use('/307step2', test307Router02);
 app.use('/users', usersRouter);
 app.use('/delay/*', delayRouter);
 app.use('/*', defaultRouter);
