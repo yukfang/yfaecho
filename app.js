@@ -28,6 +28,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homeRouter);
+app.use('/307step1', test307Router01);
+app.use('/307step2', test307Router02);
 app.use('/users', usersRouter);
 app.use('/delay/*', delayRouter);
 app.use('/*', defaultRouter);
