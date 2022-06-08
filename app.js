@@ -6,6 +6,7 @@ var bodyParser    = require('body-parser');
 var logger        = require('morgan');
 
 var homeRouter      = require('./routes/home');
+var callbackRouter  = require('./routes/callback');
 var usersRouter     = require('./routes/users');
 var delayRouter     = require('./routes/delay');
 var defaultRouter   = require('./routes/default');
@@ -28,6 +29,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/callback', callbackRouter);
 app.use('/', homeRouter);
 app.use('/307step1', test307Router01);
 // app.use('/307step2', test307Router02);
