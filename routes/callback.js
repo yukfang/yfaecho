@@ -23,13 +23,13 @@ function handleCb(req, res, next) {
     };
 
     let output = JSON.stringify(resp, null, 2);
-    app.locals.cbdata = resp;
+    // app.locals.cbdata = resp;
 
     res.write({code:0});
     res.end();
   } else {
     res.writeHead(200, {'content-type': 'application/json'});
-    res.write(app.locals.cbdata);
+    res.write({code:0});
     res.end();
   }
 }
