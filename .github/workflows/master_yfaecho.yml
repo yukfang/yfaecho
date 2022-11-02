@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'yfaecho'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_08C7CC5EBF544458966AE8DABAEEC094 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_643C53F675F5454384AF302872B8476E }}
           package: .
